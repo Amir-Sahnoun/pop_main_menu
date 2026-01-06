@@ -1,0 +1,241 @@
+/* Prince of Persia: The Two Thrones Main Menu Styles */
+/* Split horizontal layout */
+.split-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+}
+
+.left-side,
+.right-side {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side {
+  /* Menu area */
+}
+
+.right-side {
+  /* Logo area */
+}
+
+.menu-container {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  width: 38vw;
+  min-width: 320px;
+  max-width: 680px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.logo {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 32vw;
+  max-width: 680px;
+  min-width: 180px;
+  height: auto;
+  display: block;
+  transform: skewX(-4deg);
+  transition: transform 0.2s ease;
+}
+
+body,
+html {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  margin: 0;
+  height: 100vh;
+  background: #18120c;
+  background: radial-gradient(circle, #111 0%, #000 70%);
+  /* Removed flex centering for PoP 3 layout */
+  color: #d8d8d8;
+  font-family: 'Cinzel', serif;
+  cursor: url('../assets/img/cursor.png'), auto;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-bg video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.menu-container {
+  position: fixed;
+  left: 180px;
+  top: 120px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: auto;
+  width: auto;
+  height: auto;
+  transform: none;
+}
+
+.logo {
+  position: fixed;
+  top: 40px;
+  right: 150px;
+  z-index: 3;
+  pointer-events: auto;
+  margin-bottom: 0;
+}
+
+.logo img {
+  width: 680px;
+  max-width: 40vw;
+  height: auto;
+  display: block;
+  transform: skewX(-4deg);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.08) skewX(-4deg);
+}
+
+.main-menu-label {
+  font-size: 48px;
+  letter-spacing: 0.2em;
+  margin-bottom: 28px;
+  color: #d8d8d8;
+  text-align: left;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+  font-weight: 400;
+  pointer-events: auto;
+  /* animation removed */
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Removed flex centering, left-align items */
+  pointer-events: auto;
+}
+
+.menu-item {
+  font-size: 30px;
+  letter-spacing: 0.12em;
+  line-height: 2.2;
+  color: #d8d8d8;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+  text-align: left;
+  margin: 0;
+  padding: 0 32px;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.14em;
+  line-height: 2.5;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+}
+
+.menu-item:not(.disabled):hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+  color: #fff;
+}
+
+.menu-item.disabled,
+.menu-item.inactive {
+  opacity: 0.7;
+  color: #616161;
+  cursor: default;
+  pointer-events: none;
+}
+
+.menu-item.pressed {
+  color: #706E6E !important;
+  opacity: 0.7 !important;
+}
+
+@media (max-width: 900px) {
+  .logo {
+    right: 0;
+    top: 16px;
+  }
+
+  .logo img {
+    max-width: 180px;
+  }
+
+  .split-container {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .logo img {
+    max-width: 180px;
+    width: 40vw;
+  }
+
+  .main-menu-label {
+    font-size: 5vw;
+  }
+
+  .menu-item {
+    font-size: 3vw;
+  }
+
+  .menu-container {
+    min-width: 180px;
+    width: 80vw;
+  }
+
+  /* animation removed */
+}

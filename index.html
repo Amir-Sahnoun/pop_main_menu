@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/img/PrinceOfPersia.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PoP3</title>
+  <!-- Google Fonts: Cinzel for medieval style (weight 400 only) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Main menu soundtrack (hidden audio element) -->
+    <audio id="main-menu-audio" src="assets/audio/MainMenuSoundTrack.mp3" preload="auto" loop></audio>
+  <div class="video-bg">
+    <video src="assets/bg/background.mp4" autoplay loop muted playsinline></video>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <div class="split-container">
+    <div class="left-side">
+      <div class="menu-container">
+        <div class="main-menu-label">MAIN MENU</div>
+        <ul class="menu-list">
+          <li class="menu-item" id="start-game">Start New Game</li>
+          <li class="menu-item disabled">Load Saved Game</li>
+          <li class="menu-item">Options</li>
+          <li class="menu-item">Change Profile</li>
+          <li class="menu-item">Extra Features</li>
+          <li class="menu-item">Quit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="logo">
+        <img src="assets/img/poplogo.png" alt="Prince of Persia Logo" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading screen video, hidden by default -->
+  <div id="loading-screen" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:100; background:#000;">
+    <video src="assets/bg/PoP3LoadingScreen.mp4" autoplay loop muted playsinline style="width:100vw; height:100vh; object-fit:cover;"></video>
+  </div>
+  <script src="menu.js"></script>
+</body>
+</html>
